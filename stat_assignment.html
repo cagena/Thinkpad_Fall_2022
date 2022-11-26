@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>stat_assignment</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <style type="text/css">
+html {
+font-size: 100%;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+body {
+color: #222;
+font-family: "Helvetica", "Arial", sans-serif;
+font-size: 12px;
+line-height: 1.7;
+padding: 1em;
+margin: auto;
+max-width: 48em;
+background: #fefefe;
+}
+
+#write {
+max-width: 860px;
+margin: 0 auto;
+padding: 20px 30px 40px 30px;
+padding-top: 20px;
+padding-bottom: 100px;
+}
+a {
+color: #0645ad;
+text-decoration: none;
+}
+a:visited {
+color: #0b0080;
+}
+a:hover {
+color: #06e;
+}
+a:active {
+color: #faa700;
+}
+a:focus {
+outline: thin dotted;
+}
+*::-moz-selection {
+background: rgba(200, 200, 0, 0.3);
+color: #000;
+}
+*::selection {
+background: rgba(200, 200, 0, 0.3);
+color: #000;
+}
+a::-moz-selection {
+background: rgba(200, 200, 0, 0.3);
+color: #0645ad;
+}
+a::selection {
+background: rgba(200, 200, 0, 0.3);
+color: #0645ad;
+}
+p {
+margin: 1em 0;
+
+}
+img {
+max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+color: #000040;
+background: #F0F0F0;
+line-height: 125%;
+margin-top: 2em;
+margin-bottom: 0.5em;
+}
+h2, h3 {
+font-weight: normal;
+padding: 0.2em;
+margin-bottom: 0;
+}
+h4, h5, h6 {
+font-weight: bold;
+}
+h1, .subtitle {
+font-weight: bold;
+background: #fff;
+color: #0c343d;
+text-align: center;
+}
+h1 {
+background: #F0F0F0;
+font-weight: bold;
+font-size: 2em;
+margin-bottom: 2em;
+}
+.subtitle {
+line-height: 100%;
+margin-bottom: -3.30em;
+font-weight: normal;
+}
+h2 {
+background: #F0F0F0;
+font-size: 1.5em;
+}
+.heading {
+margin-bottom: 0;
+}
+.description, .Description {
+width: 100%;
+background: #f3f3f3;
+margin-top: 0;
+padding-top: 0.05em;
+padding-bottom: 0.05em;
+margin-bottom: 32px;
+}
+h3 {
+background: #F0F0F0;
+font-size: 1.5em;
+}
+h4 {
+font-size: 1.2em;
+}
+h5 {
+font-size: 1em;
+}
+h6 {
+font-size: 0.9em;
+}
+blockquote {
+color: #666666;
+margin: 0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr {
+display: block;
+height: 2px;
+border: 0;
+border-top: 1px solid #aaa;
+border-bottom: 1px solid #eee;
+margin: 1em 0;
+padding: 0;
+}
+pre, code, kbd, samp {
+color: #000;
+background: #f3f3f3;
+font-family: monospace, monospace;
+_font-family: 'courier new', monospace;
+font-size: 0.98em;
+}
+pre {
+white-space: pre;
+white-space: pre-wrap;
+word-wrap: break-word;
+}
+b, strong {
+font-weight: bold;
+}
+dfn {
+font-style: italic;
+}
+ins {
+background: #ff9;
+color: #000;
+text-decoration: none;
+}
+mark {
+background: #ff0;
+color: #000;
+font-style: italic;
+font-weight: bold;
+}
+sub, sup {
+font-size: 75%;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+sup {
+top: -0.5em;
+}
+sub {
+bottom: -0.25em;
+}
+ul, ol {
+margin: 1em 0;
+padding: 0 0 0 2em;
+}
+li p:last-child {
+margin-bottom: 0;
+}
+ul ul, ol ol {
+margin: .3em 0;
+}
+dl {
+margin-bottom: 1em;
+}
+dt {
+font-weight: bold;
+margin-bottom: .8em;
+}
+dd {
+margin: 0 0 .8em 2em;
+}
+dd:last-child {
+margin-bottom: 0;
+}
+img {
+border: 0;
+-ms-interpolation-mode: bicubic;
+vertical-align: middle;
+}
+figure {
+display: block;
+text-align: center;
+margin: 1em 0;
+}
+figure img {
+border: none;
+margin: 0 auto;
+}
+figcaption {
+font-size: 0.8em;
+font-style: italic;
+margin: 0 0 .8em;
+}
+table {
+width: 100%;
+margin-bottom: 2em;
+border-bottom: 1px solid #ddd;
+border-right: 1px solid #ddd;
+border-spacing: 0;
+border-collapse: collapse;
+}
+table th {
+padding: .2em 1em;
+background-color: #eee;
+border-top: 1px solid #ddd;
+border-left: 1px solid #ddd;
+}
+table td {
+padding: .2em 1em;
+border-top: 1px solid #ddd;
+border-left: 1px solid #ddd;
+vertical-align: top;
+}
+.author {
+font-size: 1.2em;
+text-align: center;
+}
+@media only screen and (min-width: 480px) {
+body {
+font-size: 14px;
+}
+}
+@media only screen and (min-width: 768px) {
+body {
+font-size: 16px;
+}
+}
+@media print {
+* {
+background: transparent !important;
+color: black !important;
+filter: none !important;
+-ms-filter: none !important;
+}
+body {
+font-size: 12pt;
+max-width: 100%;
+}
+a, a:visited {
+text-decoration: underline;
+}
+hr {
+height: 1px;
+border: 0;
+border-bottom: 1px solid black;
+}
+a[href]:after {
+content: " (" attr(href) ")";
+}
+abbr[title]:after {
+content: " (" attr(title) ")";
+}
+.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+content: "";
+}
+pre, blockquote {
+border: 1px solid #999;
+padding-right: 1em;
+page-break-inside: avoid;
+}
+tr, img {
+page-break-inside: avoid;
+}
+img {
+max-width: 100% !important;
+}
+@page :left {
+margin: 15mm 20mm 15mm 10mm;
+}
+@page :right {
+margin: 15mm 10mm 15mm 20mm;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3 {
+page-break-after: avoid;
+}
+}
+</style>
+</head>
+<body>
+<h2 id="assignment-statistically-significant">Assignment: Statistically Significant</h2>
+<p>In this homework assignment, you will practice creating and using a class. This assignment is to be completed individually. As it is homework, you may work with classmates, but you must do your own work; no two students should submit the same file.</p>
+<h3 id="the-assignment">The Assignment</h3>
+<p>Create a module with files <code>stat_tracker.h</code> and <code>stat_tracker.cpp</code> which contains a class which is given measurements and computes some statistical parameters from those measurements. The class should be named <code>StatTracker</code> and it should contain the following methods:</p>
+<table>
+<colgroup>
+<col style="width: 59%"></col>
+<col style="width: 40%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>StatTracker (void)</code></td>
+<td style="text-align: left;">Constructor initializes variables for zero data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>void add_data (float)</code></td>
+<td style="text-align: left;">Add one data point to the set being tracked</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>void add_data (int32_t)</code></td>
+<td style="text-align: left;">Add a signed integer point to the data set</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>void add_data (uint32_t)</code></td>
+<td style="text-align: left;">Add an unsigned integer point to the data set</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>uint32_t num_points (void)</code></td>
+<td style="text-align: left;">Returns the number of data points added</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>float average (void)</code></td>
+<td style="text-align: left;">Returns the average of the data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>float std_dev (void)</code></td>
+<td style="text-align: left;">Returns the standard deviation of the data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>void clear (void)</code></td>
+<td style="text-align: left;">Deletes all the data, returning to no points added state</td>
+</tr>
+</tbody>
+</table>
+<p>Note that computing the average and standard deviation <em>may</em> be done by keeping the data in an array, but it’s not necessary. If you keep track of the sum of the data and the sum of squares of the data and use the following equations, no arrays are necessary:</p>
+<p><br /><img style="vertical-align:middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGUAAAA1BAMAAACq3DgLAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv3aB7AAAAD3RSTlMAZolURJkiEDK73Xarze8rpezpAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACXklEQVRIDe1Vy2vUQBj/ZjdN0qQrQWjRstA1PSgiJR5aVCikCl6rB5VCsUH2JGhToVdp6UVPbcE/QEXYay6CBw/Vq0UWevFmLyp4cH3R1ueYzWQmyUyG2b07l+/3+ibZycwOgGoYr0PtsSrE+/UIIl5T8SO74KgyvO/saAGvKbi5Mo0UEcFGcGhVEBUCAvuFIiLYNhgHglgiaG+YaMwFcIkxOdCf9TQzN8H/HoB0DTp/P3VHB2Psc6sk0rRn7Aex9DreEEOckvYMYnoKlve4hEi/E8nosOikGCooxqk/J4gw+5MalZAiVa3g0r122HU9eevbb3JP5tzFgcyS6lXcLvEuXJ25ViJTaeErRQDaZHO4uxSmd995Etf57Xi8zHyKrNwOWDM3LT82bFgPHRooqTr+wNTI3EdQ7aafM42AeHMl4zOhY78z395K8U6mlaGh3GrXvCSh6fvJ37Hs90CtwWbyF0Mb6gCjqIUCppaAbaahh6PhCLJCuDF1/gxTS4DdZqI+3hxfgVuMF8DJPTAWHhDpXFiwAI5xPKX2O4Ahgs33fKTl8ErC0QTAEnFu+3zicsArCb+36MFF4jyigQoFkurUNtLrcLBBI8MUSGpUJd8MYI4mltPTTrlQI/hFrtB0oY3mUbwrpAqC7sN1coXO0r2HcaMQEQgCWJ9J1KdX2OA/E9dlA1ivOE1F4x77iyrE+fF79XaFZn0DHz1gV+jpRDfOZnavqDrdazKXkxyAXCKDaIvgfnqc1h3XdY/LDlo2eQ7p7f6fU0kPWD/vZi2Rd7uZe7YKDowkCW2CVBL/B7sekPgXPFIZAAAAAElFTkSuQmCC" alt="\bar{x} = \frac{1}{N} \sum\limits_{i=1}^N x_i" title="\bar{x} = \frac{1}{N} \sum\limits_{i=1}^N x_i" /><br /></p>
+<p><br /><img style="vertical-align:middle" src="data:image/png;base64,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" alt="S_x = \sqrt {\left(\frac{1}{N} \sum\limits_{i=1}^N x_i^2 \right) 
+   - \left( \frac{1}{N} \sum\limits_{i=1}^N x_i \right) ^2 } " title="S_x = \sqrt {\left(\frac{1}{N} \sum\limits_{i=1}^N x_i^2 \right) 
+   - \left( \frac{1}{N} \sum\limits_{i=1}^N x_i \right) ^2 } " /><br /></p>
+<p>You should test your class by giving it different sets of data and verifying that the computed <img style="vertical-align:middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAALBAMAAAC0QAErAAAALVBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAOrOgAAAADnRSTlMAZolURJkiEDK73XarzR7cC3MAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAA6SURBVAgdY2AQUlIyYEABzmGO4QwcBp0CSxi4GfoKBICSe8AKLgNJFrbnDBsYpBiXMyYwJJk5WTAAAPseCauzS1amAAAAAElFTkSuQmCC" alt="\bar{x}" title="\bar{x}" /> and <img style="vertical-align:middle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAQBAMAAADpKDJvAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAv3aB7AAAAD3RSTlMARIl2ZiJU75ndu6vNMhBVgMKNAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAdElEQVQIHWNgYGBUVglhAAM1BsZCMIOxgYFhApjF4cDAoABmcW1gYAgAs9j+2IJpIHHr/zwYk3E2hAVUkwNm8QowMEiDWcwJDAwbGcQaUxiAhrAY8DlsFmJgYlJSZOBjOApWACT4JvBBmMxpC1IhLEZHNQEA7C8Qul9TGfUAAAAASUVORK5CYII=" alt="S_x" title="S_x" /> are correct. It may be useful to generate data in a spreadsheet, computing the statistical results, and put that data into arrays which are given to an object of your class.</p>
+<p>Your files, your class, and each function should have Doxygen style comments. These comments don’t need to be especially long and detailed, but they should contain <code>@param</code> and <code>@returns</code> sections as appropriate.</p>
+<h3 id="deliverables">Deliverables</h3>
+<p>Compress your files <code>stat_tracker.h</code> and <code>stat_tracker.cpp</code> into a <strong><code>.zip</code></strong> format archive and submit the <code>.zip</code> file to this assignment. As usual, these should be the only files in the archive, and they should not be in a subdirectory.</p>
+</body>
+</html>

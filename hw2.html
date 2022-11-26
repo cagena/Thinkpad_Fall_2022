@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>hw2</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <style type="text/css">
+html {
+font-size: 100%;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+body {
+color: #222;
+font-family: "Helvetica", "Arial", sans-serif;
+font-size: 12px;
+line-height: 1.7;
+padding: 1em;
+margin: auto;
+max-width: 48em;
+background: #fefefe;
+}
+
+#write {
+max-width: 860px;
+margin: 0 auto;
+padding: 20px 30px 40px 30px;
+padding-top: 20px;
+padding-bottom: 100px;
+}
+a {
+color: #0645ad;
+text-decoration: none;
+}
+a:visited {
+color: #0b0080;
+}
+a:hover {
+color: #06e;
+}
+a:active {
+color: #faa700;
+}
+a:focus {
+outline: thin dotted;
+}
+*::-moz-selection {
+background: rgba(200, 200, 0, 0.3);
+color: #000;
+}
+*::selection {
+background: rgba(200, 200, 0, 0.3);
+color: #000;
+}
+a::-moz-selection {
+background: rgba(200, 200, 0, 0.3);
+color: #0645ad;
+}
+a::selection {
+background: rgba(200, 200, 0, 0.3);
+color: #0645ad;
+}
+p {
+margin: 1em 0;
+
+}
+img {
+max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+color: #000040;
+background: #F0F0F0;
+line-height: 125%;
+margin-top: 2em;
+margin-bottom: 0.5em;
+}
+h2, h3 {
+font-weight: normal;
+padding: 0.2em;
+margin-bottom: 0;
+}
+h4, h5, h6 {
+font-weight: bold;
+}
+h1, .subtitle {
+font-weight: bold;
+background: #fff;
+color: #0c343d;
+text-align: center;
+}
+h1 {
+background: #F0F0F0;
+font-weight: bold;
+font-size: 2em;
+margin-bottom: 2em;
+}
+.subtitle {
+line-height: 100%;
+margin-bottom: -3.30em;
+font-weight: normal;
+}
+h2 {
+background: #F0F0F0;
+font-size: 1.5em;
+}
+.heading {
+margin-bottom: 0;
+}
+.description, .Description {
+width: 100%;
+background: #f3f3f3;
+margin-top: 0;
+padding-top: 0.05em;
+padding-bottom: 0.05em;
+margin-bottom: 32px;
+}
+h3 {
+background: #F0F0F0;
+font-size: 1.5em;
+}
+h4 {
+font-size: 1.2em;
+}
+h5 {
+font-size: 1em;
+}
+h6 {
+font-size: 0.9em;
+}
+blockquote {
+color: #666666;
+margin: 0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr {
+display: block;
+height: 2px;
+border: 0;
+border-top: 1px solid #aaa;
+border-bottom: 1px solid #eee;
+margin: 1em 0;
+padding: 0;
+}
+pre, code, kbd, samp {
+color: #000;
+background: #f3f3f3;
+font-family: monospace, monospace;
+_font-family: 'courier new', monospace;
+font-size: 0.98em;
+}
+pre {
+white-space: pre;
+white-space: pre-wrap;
+word-wrap: break-word;
+}
+b, strong {
+font-weight: bold;
+}
+dfn {
+font-style: italic;
+}
+ins {
+background: #ff9;
+color: #000;
+text-decoration: none;
+}
+mark {
+background: #ff0;
+color: #000;
+font-style: italic;
+font-weight: bold;
+}
+sub, sup {
+font-size: 75%;
+line-height: 0;
+position: relative;
+vertical-align: baseline;
+}
+sup {
+top: -0.5em;
+}
+sub {
+bottom: -0.25em;
+}
+ul, ol {
+margin: 1em 0;
+padding: 0 0 0 2em;
+}
+li p:last-child {
+margin-bottom: 0;
+}
+ul ul, ol ol {
+margin: .3em 0;
+}
+dl {
+margin-bottom: 1em;
+}
+dt {
+font-weight: bold;
+margin-bottom: .8em;
+}
+dd {
+margin: 0 0 .8em 2em;
+}
+dd:last-child {
+margin-bottom: 0;
+}
+img {
+border: 0;
+-ms-interpolation-mode: bicubic;
+vertical-align: middle;
+}
+figure {
+display: block;
+text-align: center;
+margin: 1em 0;
+}
+figure img {
+border: none;
+margin: 0 auto;
+}
+figcaption {
+font-size: 0.8em;
+font-style: italic;
+margin: 0 0 .8em;
+}
+table {
+width: 100%;
+margin-bottom: 2em;
+border-bottom: 1px solid #ddd;
+border-right: 1px solid #ddd;
+border-spacing: 0;
+border-collapse: collapse;
+}
+table th {
+padding: .2em 1em;
+background-color: #eee;
+border-top: 1px solid #ddd;
+border-left: 1px solid #ddd;
+}
+table td {
+padding: .2em 1em;
+border-top: 1px solid #ddd;
+border-left: 1px solid #ddd;
+vertical-align: top;
+}
+.author {
+font-size: 1.2em;
+text-align: center;
+}
+@media only screen and (min-width: 480px) {
+body {
+font-size: 14px;
+}
+}
+@media only screen and (min-width: 768px) {
+body {
+font-size: 16px;
+}
+}
+@media print {
+* {
+background: transparent !important;
+color: black !important;
+filter: none !important;
+-ms-filter: none !important;
+}
+body {
+font-size: 12pt;
+max-width: 100%;
+}
+a, a:visited {
+text-decoration: underline;
+}
+hr {
+height: 1px;
+border: 0;
+border-bottom: 1px solid black;
+}
+a[href]:after {
+content: " (" attr(href) ")";
+}
+abbr[title]:after {
+content: " (" attr(title) ")";
+}
+.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+content: "";
+}
+pre, blockquote {
+border: 1px solid #999;
+padding-right: 1em;
+page-break-inside: avoid;
+}
+tr, img {
+page-break-inside: avoid;
+}
+img {
+max-width: 100% !important;
+}
+@page :left {
+margin: 15mm 20mm 15mm 10mm;
+}
+@page :right {
+margin: 15mm 10mm 15mm 20mm;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3 {
+page-break-after: avoid;
+}
+}
+</style>
+</head>
+<body>
+<h1 id="homework-2-first-c">Homework #2: First C++</h1>
+<p>This exercise is intended to be a simple programming task that helps you with the somewhat complex job of setting up and using PlatformIO, Arduino libraries, and FreeRTOS.</p>
+<p>Write a one-file program for your 38-pin ESP32 microcontroller board which produces square waves simulataneously on two pins:</p>
+<ul>
+<li><p>GPIO pin 12 should be named <code>FAST_PIN</code> by a <code>#define</code> or a <code>#const</code> and produce a 500 Hz square wave with 50% duty cycle</p></li>
+<li><p>GPIO pin 13 should be named <code>SLOW_PIN</code> and produce a 5 Hz square wave with 50% duty cycle</p></li>
+</ul>
+<p>The GPIO pins (<strong>G</strong>eneral <strong>P</strong>urpose <strong>I</strong>nput-<strong>O</strong>utput) pins are called GIOP pins on the diagram on Canvas. Same thing.</p>
+<p>You may wish to begin with the file <code>pleasedontcrash.cpp</code> (the example file for Monday of Week 4) and modify its tasks. You should modify the <strong>names</strong> of the tasks and definitely modify the <strong>comments</strong> for the tasks.</p>
+<p>You must use the functions <code>pinMode()</code> to set up the pins as digital outputs and <code>digitalWrite()</code> to set the pins high (<code>1</code>) and low (<code>0</code>). Task timing should be done using the FreeRTOS function <code>vTaskDelay()</code>. This is an exercise in using tasks, so <code>analogWrite()</code> should not be used.</p>
+<p>If you’d like to try the more accurate timing function <code>vTaskDelayUntil()</code>, it is accepted as an improved substitute for the simpler delay function.</p>
+<p>You should use an oscilloscope or logic analyzer to test your program. If one is not available, you can use a voltmeter to verify that you’re getting 50% duty cycle square waves (each digital output should be at half the supply voltage), but you’ll need the more sophisticated tools to measure the frequencies.</p>
+<p>Name your file <strong>your_last_name.cpp</strong> in all lowercase letters with underscores replacing spaces and punctuation in your name. Submit that file to this assignment.</p>
+</body>
+</html>
